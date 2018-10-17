@@ -1,6 +1,7 @@
 package com.masson.cursomc;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,7 +99,7 @@ public class CursomcApplication implements CommandLineRunner{
 		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));	
 		
 		Cliente cli1 = new Cliente(null, "Maria Sílva", "maria@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
-		cli1.getTelefones().addAll(Arrays.asList("27363323","93838393"));
+		cli1.getTelefones().addAll(Arrays.asList(27363323,93838393));
 		
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "38110834", cli1, c1);
 		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli1, c2);
