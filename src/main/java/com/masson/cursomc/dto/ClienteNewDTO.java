@@ -2,18 +2,38 @@ package com.masson.cursomc.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
+import com.masson.cursomc.services.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@NotEmpty(message="Campo obrigatório")
+	@Length(min=5, max=120, message="A quantidade de caracteres deve ser entre 5 e 120")
 	private String nome;
-	private	String email;
+	
+	@NotEmpty(message="Campo obrigatório")
+	@Email(message="Email inválido")
+	private String email;
+	
+	@NotEmpty(message="Campo obrigatório")
 	private String CpfOuCnpj;
 	private Integer tipo;
 	
+	@NotEmpty(message="Campo obrigatório")
 	private String logradouro;
+	
+	@NotEmpty(message="Campo obrigatório")
 	private String numero;
 	private String complemento;
 	private String bairro;
+	
+	@NotEmpty(message="Campo obrigatório")
 	private String cep;
 	
 	private Integer telefone1;
